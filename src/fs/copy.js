@@ -7,17 +7,17 @@ const sourceDir = path.join(__dirname, "files");
 const targetDir = path.join(__dirname, "files_copy")
 
 const copy = async () => {
-    const isSourceDirExisting = await checkIfExists(sourceDir);
-    if (!isSourceDirExisting) {
-        throw new Error ("FS operation failed");
-    }
-
     const isTargetDirExisting = await checkIfExists(targetDir);
     if (isTargetDirExisting) {
         throw new Error ("FS operation failed");
     }
 
-    await fs.cp(sourceDir, targetDir, { recursive: true });
+    try {
+        await fs.cp(sourceDir, targetDir, { recursive: true });
+    } catch {
+        throw new Error ("FS operation failed");
+    }
+
 };
 
 await copy();
