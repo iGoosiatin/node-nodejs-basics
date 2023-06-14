@@ -20,7 +20,7 @@ const compress = async () => {
         (error) => {
             console.log(error)
         }
-    )
+    ) 
 };
 
 await compress();
