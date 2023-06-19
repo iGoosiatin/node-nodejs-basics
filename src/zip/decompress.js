@@ -17,9 +17,7 @@ const decompress = async () => {
         zippedFileStream,
         unzipStream,
         unzippedFileStream,
-        (error) => {
-            console.log(error);
-        }
+        (error) => console.error(error)
     )
 };
 

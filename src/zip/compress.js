@@ -17,9 +17,7 @@ const compress = async () => {
         sourceFileStream,
         zipStream,
         zippedFileStream,
-        (error) => {
-            console.log(error)
-        }
+        (error) => console.error(error)
     ) 
 };
 

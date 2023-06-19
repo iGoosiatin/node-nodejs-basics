@@ -16,7 +16,7 @@ const transform = async () => {
         cliInput,
         reverse,
         cliOutput,
-        () => null
+        (error) => console.error(error)
     )
 };
 
